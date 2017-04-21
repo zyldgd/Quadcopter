@@ -1,12 +1,8 @@
-
-
 #ifndef _MPU_H_
 #define _MPU_H_
 
 #include <Kalman.h>
 #include <I2Cdev.h>
-
-#include <avr/pgmspace.h>
 
 //Magnetometer Registers
 #define MPU9150_RA_MAG_ADDRESS		0x0C
@@ -377,7 +373,7 @@ class MPU {
   public:
     MPU();
 	
-	Kalman kalmanX, kalmanY,kalmanZ;
+    Kalman kalmanX, kalmanY,kalmanZ;
     uint8_t devAddr;
     int16_t aX, aY, aZ, gX, gY, gZ, mX, mY, mZ, tempRaw;
     float roll, pitch, yaw, rollRaw, pitchRaw, yawRaw; 
@@ -392,8 +388,8 @@ class MPU {
     void getAccGyro();
     void getMag();
 
-    void getAngleRaw();    
-	void getRate();
+    void getAngleRaw();
+    void getRate();
     void getAngle();
 
   private:
